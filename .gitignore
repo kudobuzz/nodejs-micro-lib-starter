@@ -1,0 +1,32 @@
+# ignore installed modules
+node_modules/*
+
+# ignore swap files
+*.swp
+*.swo
+
+#ignore todo.txt
+todo.txt
+
+
+# ignore local test coverage report
+coverage/*
+
+# exclude .env
+.env
+
+# exclude npm logs
+npm-debug.log
+
+
+# Ignore test coverage
+converage/
+
+# exclude yarn error logs
+yarn-error.log
+
+#exclude codeship aes key
+codeship.aes
+
+# api docs
+docs/api.html

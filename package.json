@@ -1,0 +1,72 @@
+{
+  "name": "@kub.bz/logger",
+  "version": "0.0.0-development",
+  "description": "This is a logger created to be used by kudobuzz services",
+  "main": "index.js",
+  "scripts": {
+    "prepush": "npm run lint",
+    "test": "#⚡ Run test \n\t  mocha \"./{,!(node_modules)/**/}*.test.js\" ",
+    "pretest": "npm run lint",
+    "watch": "onchange \"**/*.js\" \"**/*.test.js\"  -w -- npm run test",
+    "cover": "#Run coverage report \n\t npm-run-all cover:**",
+    "cover:report": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "cover:report:open": "opn coverage/lcov-report/index.html",
+    "postcover": "rimraf -rf .nyc_output",
+    "lint": "# Run lint and fix \n\t standard --verbose  --fix | snazzy",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
+  },
+  "author": "Kudobuzz <<hello@kudobuzz.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.10",
+    "debug": "2.6.3",
+    "express": "^4.15.2",
+    "global": "^4.3.1",
+    "joi": "^10.4.1",
+    "morgan": "^1.8.1",
+    "nconf": "^0.8.4",
+    "nodemon": "^1.11.0",
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "@semantic-release/condition-codeship": "1.1.0",
+    "chai": "3.5.0",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "expressjs": "1.0.1",
+    "husky": "0.13.3",
+    "mocha": "3.2.0",
+    "npm-run-all": "4.0.2",
+    "nyc": "10.2.0",
+    "onchange": "3.2.1",
+    "opn-cli": "3.1.0",
+    "rimraf": "2.6.1",
+    "semantic-release": "^6.3.2",
+    "sinon": "2.1.0",
+    "sinon-chai": "2.9.0",
+    "snazzy": "7.0.0",
+    "standard": "10.0.1",
+    "uuid": "3.0.1"
+  },
+  "czConfig": {
+    "path": "cz-conventional-changelog"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/condition-codeship"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kudobuzz/logger.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

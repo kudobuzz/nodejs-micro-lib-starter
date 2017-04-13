@@ -1,0 +1,9 @@
+- type: serial
+  steps:
+    - name: lib
+      service: lib
+      command: yarn test
+    - name : npm
+      service: lib
+      tag : master
+      command: yarn run semantic-release
