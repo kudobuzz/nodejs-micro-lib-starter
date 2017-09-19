@@ -14,7 +14,8 @@
     "postcover": "rimraf -rf .nyc_output",
     "lint": "# Run lint and fix \n\t standard --verbose  --fix | snazzy",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "np"
   },
   "author": "Kudobuzz <<hello@kudobuzz.com>",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "morgan": "^1.8.1",
     "nconf": "^0.8.4",
     "nodemon": "^1.11.0",
+    "np": "^2.16.0",
     "superagent": "^3.5.2"
   },
   "devDependencies": {
