@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    encrypted_env_file: scripts/env.encrpted
+    encrypted_env_file: scripts/env.encrypted
     
   gcr_dockercfg:
     image: codeship/gcr-dockercfg-generator
