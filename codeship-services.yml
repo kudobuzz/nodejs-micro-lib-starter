@@ -1,7 +1,12 @@
 version: '2'
 services:
-    lib:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        encrypted_env_file: env.encrpted
+  lib:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    encrypted_env_file: scripts/env.encrypted
+    
+  gcr_dockercfg:
+    image: codeship/gcr-dockercfg-generator
+    add_docker: true
+    encrypted_env_file: scripts/google_deployment.env.encrypted

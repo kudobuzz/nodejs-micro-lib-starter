@@ -1,0 +1,5 @@
+example/
+scripts/
+codeship-services.yml
+codeship-steps.yml
+test
