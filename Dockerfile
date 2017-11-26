@@ -1,17 +1,11 @@
-FROM node:boron
-
-MAINTAINER Obeng William
+FROM us.gcr.io/kudobuzz-projects/docker-node
 
 ENV ROOTPATH=/usr/src/lib
 
 WORKDIR $ROOTPATH
 
-RUN  cd /tmp  &&  yarn
+COPY package.json $ROOTPATH/
 
-RUN mkdir -p $ROOTPATH && cd $ROOTPATH &&  ln -s /tmp/node_modules
-
-COPY package.json  yarn.lock /usr/src/lib/
+RUN npm install
 
 COPY . $ROOTPATH
-
-RUN yarn
